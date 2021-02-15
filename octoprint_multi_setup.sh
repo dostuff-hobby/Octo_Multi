@@ -344,23 +344,3 @@ start_daemon
 #lsusb|grep -i "OpenMoko" | awk '{print $6}' | cut -d ":" -f 2
 
 echo -e "\n\n\nOctoprint has been configured for the following users:\n`for i in $(seq 1 "$OCTOCOUNT") ;do echo -e "octouser$i in /home/octouser$i";done`\n\nOctoprint has been installed to $install_dir/bin/octoprint"
-
-#sed "/default: _default/a serial:\n    additionalPorts:\n    - /dev/$TTYVAR\n    baudrate: 115200\n    port: /dev/$TTYVAR" /home/octouser2/.octoprint/config.yaml
-
-#	To delete all configurations placed by this script, please execute the following commands, you can copy and paste verbatim on the shell or into a script.
-#	Run userdel once per octouser account created.
-
-#for i in octoprint1 octoprint2 octoprint3
-#do
-#        systemctl stop $i
-#done
-#
-#userdel -r octouser1
-#userdel -r octouser2
-#userdel -r octouser3
-#groupdel octoprinter
-#rm -rf /usr/local/User_Apps
-#rm -r /etc/init.d/octo*
-#rm -r /etc/default/octo*
-#apt-get -y remove python3-pip python3-venv
-
